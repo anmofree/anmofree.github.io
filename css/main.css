@@ -1646,7 +1646,7 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
-#rewardButton {
+rewardButton {
   cursor: pointer;
   border: 0;
   outline: 0;
@@ -2014,7 +2014,7 @@ rewardButton span {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a1ff57;
+  background: #ec815e;
 }
 .links-of-blogroll {
   font-size: 13px;
