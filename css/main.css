@@ -2014,7 +2014,7 @@ rewardButton span {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a8ffff;
+  background: #77e8b0;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3230,4 +3230,17 @@ rewardButton span {
   font-size: 18px;
   font-family: "Microsoft Yahei";
   background: #f44336;
+}
+#rewardButton span:hover {
+  background: #f7877f;
+}
+#wechat:hover p {
+  animation: roll 0.1s infinite linear;
+  -webkit-animation: roll 0.1s infinite linear;
+  -moz-animation: roll 0.1s infinite linear;
+}
+#alipay:hover p {
+  animation: roll 0.1s infinite linear;
+  -webkit-animation: roll 0.1s infinite linear;
+  -moz-animation: roll 0.1s infinite linear;
 }
