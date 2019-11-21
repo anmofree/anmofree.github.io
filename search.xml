@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Thrift服务（2）：安装]]></title>
+    <url>%2Fanmofree.github.io%2F2019%2F11%2F21%2FThrift%E6%9C%8D%E5%8A%A1%EF%BC%882%EF%BC%89%EF%BC%9A%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[环境 win10 下载下载的版本为0.11.0，目前最新版到了0.13.0.下载采用清华的镜像：https://mirrors.tuna.tsinghua.edu.cn/apache/thrift/0.11.0/thrift-0.11.0.exe 安装 将exe文件下载到C:\Thrift（路径可更改）。 将thrift-0.11.0.exe改名为thrift.exe。 配置环境变量：在Path中新增一行：C:\Thrift。 验证打开cmd命令行输入命令： thrift -version 返回结果： Thrift version 0.11.0 安装完成]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>RPC，Thrift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Thrift服务（一）：介绍]]></title>
     <url>%2Fanmofree.github.io%2F2019%2F11%2F20%2FThrift%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[前言Apache Thrift是一种RPC框架。 RPC（Remote Procedure Call）即远程过程调用。其调用协议通常包含传输协议和序列化协议。传输协议包含: 如著名的gRPC(grpc / grpc.io) 使用的 http2 协议，也有如dubbo一类的自定义报文的tcp协议。序列化协议包含: 如基于文本编码的 xml json，也有二进制编码的 protobuf hessian等。 为什么需要RPC我们现在假设一个场景：服务器1应用程序A里有方法a，服务器2应用程序B里有方法b。如果应用程序A需要调用方法a，直接在本地内存调用即可。那么如果应用程序A想要调用方法b呢？ 这种跨进程甚至跨服务器的调用即需要用到RPC（远程过程调用）。需要通过网络传输来表达调用的语义和传达调用的数据。 RPC怎么实现 服务器A和服务器B如何实现网络连接？或者说客户端和服务端如何实现网络连接？目前网络同通信协议包含TCP协议、UDP协议或者HTTP协议等。目前RPC框架常用的就是TCP协议来建立连接。这时服务器A如果想连接到服务器B，就需要告诉底层的RPC框架服务端的IP、PORT、方法名、方法参数等。 服务器A的底层RPC框架拿到远程连接的参数后，开始发起远程调用。需要传输的数据是基于网络协议传输的，以TCP协议举例，因为网络协议是基于二进制的，那么内存中的数据就需要序列化（Serialize）或编码（marshal）成二进制的形式。然后底层RPC框架将二进制数据通过TCP传输到服务器B。 服务器B接收到request后，对二进制数据进行反序列化，恢复成内存中的表达方式，然后找到相应的方法进行调用，得到方法的返回值。服务器B将返回值序列化通过底层RPC框架再发送给服务器A。 服务器A接收到返回值后，再反序列化为内存中的表达方式，将结果值交给应用。 Figure 1. Steps in executing a remote procedure call（图片来源：https://www.cs.rutgers.edu/~pxk/417/notes/03-rpc.html） Thrift介绍Thrift是Facebook于2007年开发的跨语言的rpc服务框架，提供多语言的编译功能，并提供多种服务器工作模式；用户通过Thrift的IDL（接口定义语言）来描述接口函数及数据类型，然后通过Thrift的编译环境生成各种语言类型的接口文件，用户可以根据自己的需要采用不同的语言开发客户端代码和服务器端代码。 参考： https://blog.csdn.net/houjixin/article/details/42778335 https://www.zhihu.com/question/25536695]]></content>
