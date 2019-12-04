@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[年轻时应该去远方]]></title>
+    <url>%2Fanmofree.github.io%2F2019%2F12%2F04%2F%E5%B9%B4%E8%BD%BB%E6%97%B6%E5%BA%94%E8%AF%A5%E5%8E%BB%E8%BF%9C%E6%96%B9%2F</url>
+    <content type="text"><![CDATA[年轻时应该去远方泰戈尔在《新月集》里写过的诗句：“只要他肯把他的船借给我，我就给它安装一百只桨，扬起五个或六个或七个布帆来。我决不把它驾驶到愚蠢的市场上去……我将带我的朋友阿细和我做伴。我们要快快乐乐地航行于仙人世界里的七个大海和十三条河道。我将在绝早的晨光里张帆航行。中午，你正在池塘洗澡的时候，我们将在一个陌生的国王的国土上了。”]]></content>
+      <categories>
+        <category>阅读</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Centos7实现JDK1.7和JDK1.8共存]]></title>
     <url>%2Fanmofree.github.io%2F2019%2F11%2F27%2FCentos7%E5%AE%9E%E7%8E%B0JDK1-7%E5%92%8CJDK1-8%E5%85%B1%E5%AD%98%2F</url>
     <content type="text"><![CDATA[背景有一台服务器的操作系统是centos7，JDK为1.8。但是一个老项目的程序都是用的JDK1.7。为了不妨碍服务器已有程序的正常运行，需要实现JDK1.7和JDK1.8共存。 实施下载JDK1.7下载jdk7u79linuxx64.tar.gz 然后上传Linux。 注意：以下命令在root用户下执行 添加用户123useradd testpasswd test# 设置密码 给用户添加root权限12chmod 640 /etc/sudoersvim /etc/sudoers 添加以下内容 123## Allow root to run any commands anywhere root ALL=(ALL) ALLtest ALL=(ALL) ALL 将用户添加到root用户组123usermod -a -G root test# 查看用户属于哪个用户组groups test 解压JDK1.7的tar包1tar zxvf jdk7u79linuxx64.tar.gz 改变JDK1.7解压后文件夹的所属用户和组1chown -R test:test jdk1.7.0_79 注意：以下命令在test用户下执行 配置java环境变量12su testvim ~/.bashrc 添加以下内容 123export JAVA_HOME=/software/jdk1.7.0_79/export PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar source一下 1source ~/.bashrc 查看java版本 1java -version 结果 123java version &quot;1.7.0_79&quot;Java(TM) SE Runtime Environment (build 1.7.0_79-b15)Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)]]></content>
