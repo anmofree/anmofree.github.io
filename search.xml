@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux下安装redis]]></title>
+    <url>%2Fanmofree.github.io%2F2020%2F03%2F19%2Flinux%E4%B8%8B%E5%AE%89%E8%A3%85redis%2F</url>
+    <content type="text"><![CDATA[前言本篇文章主要介绍在linux环境安装redis单副本的过程。 环境 Centos 7.4 Redis 4.0.9 安装过程 切换到安装程序目录cd /software 下载安装包wget http://download.redis.io/releases/redis-4.0.9.tar.gz 解压tar xzf redis-4.0.9.tar.gz 编译cd redis-4.0.9make 安装cd srcmake install 创建bin和etc文件，管理redis命令和配置文件mkdir /software/redis-4.0.9/binmkdir /software/redis-4.0.9/etc 移动文件和命令mv ./redis.conf ./etc/mv redis-benchmark redis-check-aof redis-check-rdb redis-cli redis-server ../bin/ 修改配置文件，编辑redis.conf 12daemonize yeslogfile /software/redis-4.0.9/log 后台启动redis服务./bin/redis-server /software/redis-4.0.9/etc/redis.conf 查看log日志，看服务是否启动成功]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[年轻时应该去远方]]></title>
     <url>%2Fanmofree.github.io%2F2019%2F12%2F04%2F%E5%B9%B4%E8%BD%BB%E6%97%B6%E5%BA%94%E8%AF%A5%E5%8E%BB%E8%BF%9C%E6%96%B9%2F</url>
     <content type="text"><![CDATA[年轻时应该去远方泰戈尔在《新月集》里写过的诗句：“只要他肯把他的船借给我，我就给它安装一百只桨，扬起五个或六个或七个布帆来。我决不把它驾驶到愚蠢的市场上去……我将带我的朋友阿细和我做伴。我们要快快乐乐地航行于仙人世界里的七个大海和十三条河道。我将在绝早的晨光里张帆航行。中午，你正在池塘洗澡的时候，我们将在一个陌生的国王的国土上了。”]]></content>
